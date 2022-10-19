@@ -20,5 +20,11 @@ an error. Hence only include those dependencies which you are going to use intia
 2) @enableAutoConfiguration
 3) @ComponentScan
 
+**Where will you configure everything**
+You can configure everything in the application.properties file.
+
+**Important Note**
+For the embedded tomcat to read the JSP pages just add the tomcat jasper dependency from the maven repository.
+
 
 
