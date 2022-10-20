@@ -30,8 +30,8 @@ For the embedded tomcat to read the JSP pages just add the tomcat jasper depende
 **JPA(Java Persistence API) in Spring Boot**
  JPA is way with the help of which you can connect your application to the database.
  Hibernate framework provides all the implementation of the JPA dependency. Other frameworks like OpenJPA , Eclipse Link also provides the implementation.
- We will use ORM for Object Relational Mapping so that we dont need to write queries or manually conver the object.
- Now if we want to map User class in the database we have to first create the mode class that is User and define all the properties. After that we need to create one
+ We will use ORM for Object Relational Mapping so that we dont need to write queries or manually convert the object.
+ Now if we want to map User class in the database we have to first create the model class that is User and define all the properties. After that we need to create one
  more database layer over that which is user defined and similar to the dao interface that we used to make known as UserRepository. This UserRepository interface will
  extend the CRUDINTERFACE to perform all the crud operations. We will use EntityManager to perform create,update,delete operations.
 
