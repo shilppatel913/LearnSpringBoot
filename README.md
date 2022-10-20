@@ -60,6 +60,15 @@ Rather than using derived methods you can write a query and perform your operati
   @Query(value = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = ?1", nativeQuery = true)
   User findByEmailAddress(String emailAddress);
  
+ 
+**Spring dev tools**
+You can include the dependency of spring dev tools in your maven project to optimize your project creating experience. It has majorly 4 advantages
+1) Property Defaults
+  Sometimes even after changing a property of an element we do not see that change being reflected in our application.This is because our browser is loading our page from the cache and hence no new changes exist in that cache. Hence we need to set this property to false and dev tools automatically do that.
+ 
+ 2) Automatic Reloading
+ 3) Automatic Restart on adding any new software.
+ 4) Remote Applications
 
 
 
