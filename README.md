@@ -36,4 +36,16 @@ For the embedded tomcat to read the JSP pages just add the tomcat jasper depende
  extend the CRUDINTERFACE to perform all the crud operations. We will use EntityManager to perform create,update,delete operations.
 
 
+**Custom Finder**
+We have seen some in built query related methods that the crud repository provides us. But what if we want to write custom queries and execute them according to our 
+need. We can write customised methods for that. For example in the UserRepository interface which is a user defined interface and which extends another interface which is the CrudRepository we can write our own methods and data will be queried accordingly. There are different types for every variation. You need to mention the return type more precisely and the criteria or condition on which the data will be queried. Some of the examples are :
+1) data by name
+2) data by name and passsword
+3) data by date
+4) data by startswith condition
+For more examples you can refer to the below link which has all the methods there are possible.
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.details
+
+
+
 
