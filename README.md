@@ -49,3 +49,18 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories
 
 
 
+**JPQL and Native Query**
+Rather than using derived methods you can write a query and perform your operation.You will have to use the @Query annotation for that. 
+1)JPQl is Java Persistence Query language which has different syntax than sql .
+ @Query("select u from User u where u.userName=:n")
+ public List<User> q1(@Param("n") String name)  //this n will be binded to the name variable and now you can use the function.
+ 
+2) Native query
+ This is our normal sql query 
+  @Query(value = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = ?1", nativeQuery = true)
+  User findByEmailAddress(String emailAddress);
+ 
+
+
+
+
