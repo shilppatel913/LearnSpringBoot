@@ -34,6 +34,11 @@ public class User {
 	public String getUserCity() {
 		return userCity;
 	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", userStreet=" + userStreet + ", userCity=" + userCity
+				+ "]";
+	}
 	public void setUserCity(String userCity) {
 		this.userCity = userCity;
 	}
