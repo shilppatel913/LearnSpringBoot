@@ -1,8 +1,22 @@
 package RestBoot.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "books")
 public class Book {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "b_id")
 	private int id;
+	@Column(name = "b_name")
 	private String bName;
+	@Column(name = "b_author")
 	private String bAuthor;
 	public int getId() {
 		return id;

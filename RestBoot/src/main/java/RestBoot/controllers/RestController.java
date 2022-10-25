@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,13 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import RestBoot.dao.BookRepository;
+import RestBoot.dao.BookService;
 import RestBoot.models.Book;
 
+@Component
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 	@Autowired
-	private BookRepository bookRepo;
+	private BookService bookRepo;
 	
 	// In the generic type parameter of your Response Entity you pass the return type
 	@GetMapping("/books")
