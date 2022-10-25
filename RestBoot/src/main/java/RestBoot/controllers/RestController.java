@@ -1,8 +1,11 @@
 package RestBoot.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,15 +20,24 @@ import RestBoot.models.Book;
 public class RestController {
 	@Autowired
 	private BookRepository bookRepo;
+	
+	// In the generic type parameter of your Response Entity you pass the return type
 	@GetMapping("/books")
-	public List<Book> booksGet() {
-		return this.bookRepo.getAllBooks(); //this will return a json response to the client
+	public ResponseEntity<List<Book>> booksGet() {
+		List<Book> books =this.bookRepo.getAllBooks(); 
+		if(books.size()<=0) {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+		return ResponseEntity.of(Optional.of(books));
 	}
 	
 	@GetMapping("/books/{bookId}")
-	public Book oneBook(@PathVariable("bookId") int bId) {
+	public ResponseEntity<Book> oneBook(@PathVariable("bookId") int bId) {
 		Book book=this.bookRepo.getBook(bId);
-		return book;
+		if(book==null) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+		return ResponseEntity.of(Optional.of(book));
 	}
 	
 	@PostMapping("/books/add")
@@ -35,9 +47,14 @@ public class RestController {
 	}
 	
 	@DeleteMapping("/books/{bookId}")
-	public String bookDelete(@PathVariable("bookId") int bookId) {
-		this.bookRepo.deleteBook(bookId);
-		return "book has been deleted successfully";
+	public ResponseEntity<String> bookDelete(@PathVariable("bookId") int bookId) {
+		try {
+			this.bookRepo.deleteBook(bookId);
+			return ResponseEntity.of(Optional.of("the book has been deleted successfully"));
+		}catch(Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+		
 	}
 	
 	@PutMapping("/books/{bookId}")

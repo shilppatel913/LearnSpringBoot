@@ -24,9 +24,13 @@ public class BookRepository {
 	public Book getBook(int bookId) {
 		//we will try to filter that particular if the id matches
 		//or every other book goes again into the list
-		;
-		Book book=this.list.stream().filter(b->b.getId()==bookId).findFirst().get();
-		return book;
+		try{
+			Book book=this.list.stream().filter(b->b.getId()==bookId).findFirst().get();
+			return book;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	//let us add a book
