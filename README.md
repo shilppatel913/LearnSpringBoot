@@ -70,6 +70,12 @@ You can include the dependency of spring dev tools in your maven project to opti
  3) Automatic Restart on adding any new software.
  4) Remote Applications
 
+ 
+ 
+ 
+ 
+ **REST APIs**
+ We use the Response Entity object to send back the status of the request that has been triggered by the client. We can send different status codes in a specific manner describing how the request was handled back on the server.
 
 
 
