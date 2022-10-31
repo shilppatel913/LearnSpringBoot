@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>This is the about page using thymeleaf</h1>
+<h1>The list of the names are</h1>
+<ul>
+	<li th:each="name,status:${names}">
+		<span th:style="${status.odd}?'font-weight:bold':''" th:text="${name}+''+${status.index}"></span>
+	</li>
+</ul>
+<!-- variable in th:width can only be used in that particular attribute or in child attr -->
+<div th:with="a=5,b=6">
+	<h1 th:text="${a}"></h1>
+	<h1 th:text="${b}"></h1>
+</div>
+
+
+</body>
+</html>

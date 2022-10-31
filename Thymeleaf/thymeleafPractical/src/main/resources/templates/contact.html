@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>This is the contact page and to check if unless and switch case</h1>
+<p th:if="${isActive}" th:style="'color:green;'">User is Active</p>
+<p th:unless="${isActive}" th:style="'color:red'">User Not Active</p>
+
+<div th:switch="${#lists.size(numbers)}">
+	<h1 th:case="0">No number in the list</h1>
+	<h1 th:case="1">Only one element in the list</h1>
+	<h1 th:case="*">More than one numbers in the list</h1>
+</div>
+</body>
+</html>

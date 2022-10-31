@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Here we will include one footer fragment
+		there are three way to use a fragment in a template 
+		1) replace - It will replace your footer with the fragment footer in this case
+		2) Insert -It will insert the whole fragment inside your template's footer
+		3) Include - It will insert only the body of your fragment footer in your template footer
+	Now if you want to pass dynamic variables in your fragment add it in the parameters of footer1();
+	 -->
+	<footer id="t1" th:replace="footer::footer1(${title})"></footer>
+</body>
+</html>

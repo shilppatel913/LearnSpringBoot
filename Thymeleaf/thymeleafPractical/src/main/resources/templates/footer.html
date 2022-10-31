@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is our fragment</title>
+</head>
+<body>
+	<footer id="f1" th:fragment="footer1(title)">
+		<div>
+			<h1 th:text="${title}"></h1>
+			<h1>Print the description</h1>
+		</div>
+	</footer>
+</body>
+</html>

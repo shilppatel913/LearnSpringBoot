@@ -7,5 +7,6 @@
 <body>
 <h1>This is the home page using thymeleaf</h1>
 <h1>My name is <span th:text="${name}"></span></h1>
+<p>The length of the name is <span th:text="${#strings.length(name)}"></span></p>
 </body>
 </html>
