@@ -78,4 +78,10 @@ You can include the dependency of spring dev tools in your maven project to opti
  We use the Response Entity object to send back the status of the request that has been triggered by the client. We can send different status codes in a specific manner describing how the request was handled back on the server.
 
 
+**Form Validation using Server side**
+Usually we can validate the form at both the client as well as the server side. But sometimes the js at the client can be disabled by a user and hence no validation 
+takes place at the client side. Hence server side form validation is important.We have to use two dependencies bean-validation api and hibernate validator and to 
+activate them we have to make use of @Valid annotation in the controller class. Different annotations such as @NotBlank, @Size, @Pattern(regex="") in the entity class
+for the validation purpose which are being provided by the hibernate validator dependency. After entering the data in the form if any invalid data has been entered , it is stored inside the BindingResult object. And you can show all the errors with the help of it on the server side and on the client side as well in a well mannered fashion.
+
 
