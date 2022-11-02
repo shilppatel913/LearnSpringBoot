@@ -42,4 +42,10 @@ public class MainController {
 			model.addAttribute("title","My name is Shilp");
 			return "service";
 		}
+		//how to include a base template in a specific template
+		@RequestMapping("/base")
+		public String base() {
+			System.out.println("Inside the base");
+			return "demo"; //the base template will act as a fragment and included in demo
+		}
 }

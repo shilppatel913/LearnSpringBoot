@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>This is the common header</header>
+	<!-- Here the content of different pages will come -->
+	<div th:replace="${content}"></div>
+	
+	<footer>This is the common footer</footer>
+
+</body>
+</html>
